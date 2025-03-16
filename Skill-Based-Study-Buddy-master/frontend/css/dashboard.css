@@ -1,0 +1,157 @@
+/* dashboard.css */
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* User Info Section */
+.user-info {
+    margin-bottom: 30px;
+}
+
+.user-info h3 {
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.user-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Skill Matching Section */
+.skill-matching {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.skill-matching h5 {
+    font-size: 1.25rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Available Study Partners Section */
+.study-partners {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.study-partners h5 {
+    font-size: 1.25rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.partner-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.partner-list li {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Action Buttons */
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Find Study Buddy Button */
+.find-buddy-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.find-buddy-btn:hover {
+    background-color: #218838;
+}
+
+/* Profile Button */
+.profile-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.profile-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 10px;
+    }
+
+    .user-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .skill-list li,
+    .partner-list li {
+        font-size: 0.875rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: white;
+}
+
+/* Profile Card */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: white;
+    color: black;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #4a90e2;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+}

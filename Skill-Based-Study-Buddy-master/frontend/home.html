@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Skill-Based Study Buddy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css"> <!-- Custom CSS -->
+    <style>
+        /* Sparkling Subscribe Button */
+        .subscribe-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(90deg, #ff8c00, #ff0080, #8a2be2, #ff0080, #ff8c00);
+            background-size: 400% 400%;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            animation: glitter 2s infinite alternate;
+            position: fixed;
+            z-index: 999;
+        }
+
+        /* Hover Effect */
+        .subscribe-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 12px rgba(255, 215, 0, 1);
+        }
+
+        /* Glitter Animation */
+        @keyframes glitter {
+            0% { background-position: 0% 50%; filter: brightness(1.2); }
+            50% { background-position: 100% 50%; filter: brightness(1.5); }
+            100% { background-position: 0% 50%; filter: brightness(1.2); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sparkling Subscription Button -->
+    <button class="subscribe-btn" onclick="subscribe()">Subscribe</button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Skill-Based Study Buddy</h1>
+        <p>Your smart companion for skill-based learning.</p>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="navigation">
+        <h2>Where do you want to go?</h2>
+        <div class="nav-container">
+            <div class="nav-card" onclick="navigateTo('profile.html')">
+                <h3>👤</h3>
+                <h4>Profile</h4>
+            </div>
+            <div class="nav-card" onclick="navigateTo('courses.html')">
+                <h4>🖥️</h4>
+                <h3>Courses</h3>
+            </div>
+            <div class="nav-card" onclick="navigateTo('chat.html')">
+                <h4>💬</h4>
+                <h3>Learn with Buddy</h3>
+            </div>
+            <div class="nav-card" onclick="navigateTo('mentors.html')">
+                <h4>🧑‍🏫</h4>
+                <h3>Mentors</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature-box">
+                <h3>📚 Personalized Learning</h3>
+                <p>Get tailored courses and learning materials based on your skills.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🤖 AI-Powered Assistance</h3>
+                <p>Smart chatbot to guide you through learning paths and queries.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🎓 Certification & Growth</h3>
+                <p>Complete courses and earn certifications to showcase your skills.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "H4vXOZVApGu6tplEfs3tM",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="H4vXOZVApGu6tplEfs3tM" domain="www.chatbase.co" defer>
+    </script>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2025 Skill-Based Study Buddy | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function subscribe() {
+            window.location.href = "subscription.html"; // Navigate to subscription page
+        }
+       
+        function navigateTo(page) {
+            window.location.href = page;
+    }
+
+
+    </script>
+
+</body>
+</html>

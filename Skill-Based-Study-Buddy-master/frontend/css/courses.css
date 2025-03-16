@@ -1,0 +1,71 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;  /* Modern & Professional Font */
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero-section h1 {
+    font-size: 42px; /* Bigger Title */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-section p {
+    font-size: 20px; /* Increased Readability */
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Course Cards */
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    padding: 15px;
+}
+
+.card:hover {
+    transform: scale(1.04);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px; /* Bigger & More Readable */
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.card-text {
+    font-size: 16px; /* Balanced for Readability */
+    font-weight: 400;
+    color: #555;
+}
+
+.btn-course {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-course:hover {
+    background-color: #0056b3;
+}

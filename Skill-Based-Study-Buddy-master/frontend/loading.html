@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .text {
+            font-weight: bold;
+            animation: slideIn 4s ease-in-out;
+        }
+
+        .dots::after {
+            content: "";
+            display: inline-block;
+            animation: dotsAnimation 1.9s infinite steps(3);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes dotsAnimation {
+            0% { content: "."; }
+            33% { content: ".."; }
+            66% { content: "..."; }
+            100% { content: ""; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="text">🚀 Welcome to Study-Buddy<br>Skill-Based Learning Platform<span class="dots"></span></p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "home.html"; // Redirect to home after animation
+        }, 3000);
+    </script>
+</body>
+</html>

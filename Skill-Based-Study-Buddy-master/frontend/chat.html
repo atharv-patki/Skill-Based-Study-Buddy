@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Buddy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chat.css">
+    <script src="https://meet.jit.si/external_api.js"></script>
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Sidebar for Tools -->
+        <aside class="sidebar">
+            <h2>📢 Learning Room </h2>
+            <button onclick="toggleWhiteboard()">Whiteboard</button>
+            <button onclick="startVideoCall()">Video Call</button>
+            <button onclick="shareScreen()">Share Screen</button>
+            <input type="file" id="fileUpload" hidden>
+            <button onclick="document.getElementById('fileUpload').click()">Upload File</button>
+
+            <!-- Chat Rooms Section -->
+            <h2>💬 Select Chat Room</h2>
+            <div class="room-container">
+                <button class="room-card" onclick="openChat('Public')">Public Chat</button>
+                <button class="room-card" onclick="openChat('Private')">Private Chat</button>
+                <button class="room-card" onclick="openChat('Group')">Group Chat</button>
+            </div>
+        </aside>
+
+        <!-- Chat Section (Initially Hidden) -->
+        <section class="chat-box" id="chatBox" style="display: none;">
+            <h2 id="room-title">💬 Chat Room</h2>
+            <div id="chat-window">
+                <div id="chat-messages"></div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">📩 Send</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ✅ Whiteboard Modal (Popup) -->
+    <div id="whiteboard-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 1000;">
+        <button onclick="closeWhiteboard()" id="btnn" >❌ Close</button>
+        <button onclick="clearWhiteboard()" id="btnn" >🧹 Clear</button>
+        <canvas id="whiteboard" width="800" height="500" style="border: 2px solid black;"></canvas>
+    </div>
+
+    <!-- ✅ Video Call Container -->
+    <div id="video-call-container" style="display: none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 800px; height: 500px; background: white; padding: 10px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 1000;">
+        <button onclick="endVideoCall()">❌ End Call</button>
+        <div id="video-call-frame" style="width: 100%; height: 100%;"></div>
+    </div>
+
+    <script>
+        // ✅ Whiteboard Toggle
+        function toggleWhiteboard() {
+            let whiteboard = document.getElementById("whiteboard-container");
+            whiteboard.style.display = (whiteboard.style.display === "none" || whiteboard.style.display === "") ? "block" : "none";
+        }
+
+        function closeWhiteboard() {
+            document.getElementById("whiteboard-container").style.display = "none";
+        }
+
+        function clearWhiteboard() {
+            const canvas = document.getElementById("whiteboard");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // ✅ Whiteboard Drawing Logic (Improved)
+        const canvas = document.getElementById("whiteboard");
+        const ctx = canvas.getContext("2d");
+        let drawing = false;
+
+        canvas.addEventListener("mousedown", (e) => {
+            drawing = true;
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+        });
+
+        canvas.addEventListener("mousemove", (e) => {
+            if (drawing) {
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.strokeStyle = "black"; // Ensure visible drawing
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            drawing = false;
+            ctx.closePath();
+        });
+
+        // ✅ Video Call Integration (Jitsi Meet)
+        let jitsiApi = null;
+
+        function startVideoCall() {
+            let videoContainer = document.getElementById("video-call-container");
+
+            if (videoContainer.style.display === "flex") {
+                return;
+            }
+
+            videoContainer.style.display = "block";
+
+            if (!jitsiApi) {
+                let container = document.getElementById("video-call-frame");
+                jitsiApi = new JitsiMeetExternalAPI("meet.jit.si", {
+                    roomName: "Meet",
+                    parentNode: container,
+                    width: "100%",
+                    height: "100%",
+                });
+            }
+        }
+
+        function endVideoCall() {
+            if (jitsiApi) {
+                jitsiApi.dispose();
+                jitsiApi = null;
+            }
+            document.getElementById("video-call-container").style.display = "none";
+        }
+
+        function shareScreen() {
+            if (jitsiApi) {
+                jitsiApi.executeCommand("toggleShareScreen");
+            }
+        }
+        function openChat(roomName) {
+            document.getElementById("chatBox").style.display = "block"; // Show chat section
+            document.getElementById("room-title").innerText = `💬 ${roomName} Chat`; // Update title
+            document.getElementById("chat-messages").innerHTML = `<p>Welcome to the ${roomName} chat room!</p>`; // Placeholder text
+}
+    </script>
+
+    <script src="js/chat.js"></script>
+
+</body>
+</html>

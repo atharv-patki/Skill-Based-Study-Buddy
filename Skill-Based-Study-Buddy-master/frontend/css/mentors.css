@@ -1,0 +1,95 @@
+/* Apply background to match home page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Title & Subtitle */
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #d1d1d1;
+    margin-bottom: 40px;
+}
+
+/* Mentor Table */
+.mentor-table {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-spacing: 20px;
+}
+
+/* Mentor Card */
+.mentor-card {
+    background: white;
+    color: black;
+    padding: 9px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    transition: transform 0.1s ease-in-out;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Mentor Name */
+.mentor-card h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Expertise */
+.expertise {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.linkedin, .github {
+    font-size: 26px;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 10%;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* LinkedIn */
+.linkedin {
+    color: #0077b5;
+}
+
+.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+/* GitHub */
+.github {
+    color: #333;
+}
+
+.github:hover {
+    background: #333;
+    color: white;
+}

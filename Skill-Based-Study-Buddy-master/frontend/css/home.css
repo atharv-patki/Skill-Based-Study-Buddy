@@ -1,0 +1,100 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: white;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 50px;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Section */
+.navigation h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Navigation Cards */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.nav-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    width: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.nav-card h3 {
+    font-size: 1.2rem;
+}
+
+.nav-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Why Choose Us Section */
+.why-choose {
+    margin-top: 40px;
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
